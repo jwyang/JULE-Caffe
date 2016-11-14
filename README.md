@@ -3,7 +3,7 @@ Caffe code for our JULE paper "Joint unsupervised learning of deep representatio
 
 ### Overview
 
-This project is a Caffe implementation for our CVPR 2016 [paper](https://arxiv.org/abs/1604.03628), which performs jointly unsupervised learning of deep CNN and image clusters. The intuition behind this is that better image representation will facilitate clustering, while better clustering results will help representation learning. Given a unlabeled dataset, it will iteratively learn CNN parameters and cluster images in unsupervised manner.
+This project is a Caffe implementation for our CVPR 2016 [paper](https://arxiv.org/abs/1604.03628), which performs jointly unsupervised learning of deep CNN and image clusters.
 
 ### Acknowledgement
 
