@@ -1,0 +1,402 @@
+name: "LeNet"
+layer {
+  name: "data"
+  type: "Data"
+  top: "data"
+  top: "label"
+  data_param {
+    source: "D:/caffe-windows-master/caffe-windows-master/examples/mnist/mnist-train-mini-leveldb"
+    backend: LEVELDB
+    batch_size: 128
+  }
+  transform_param {
+    #mean_file: "D:/caffe-windows-master/caffe-windows-master/examples/mnist/mnist_mini_train_mean.binaryproto"
+    scale: 0.00390625
+  }
+  include { 
+    phase: TRAIN 
+  }
+}
+layer {
+  name: "data"
+  type: "Data"
+  top: "data"
+  top: "label"
+  data_param {
+    source: "D:/caffe-windows-master/caffe-windows-master/examples/mnist/mnist-test-mini-leveldb"
+    backend: LEVELDB
+    batch_size: 128
+  }
+  transform_param {
+    #mean_file: "D:/caffe-windows-master/caffe-windows-master/examples/mnist/mnist_mini_train_mean.binaryproto"
+    scale: 0.00390625
+  }
+  include { 
+    phase: TEST
+  }
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 20
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "gaussian"
+	  std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+    name: "relu1" 
+    type: "ReLU" 
+    bottom: "conv1" 
+    top: "conv1" 
+}
+ 
+
+# layer {
+  # name: "conv1_bn"
+  # type: "BN"
+  # bottom: "conv1"
+  # top: "conv1_bn"
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # bn_param {
+	# scale_filler {
+	  # type: "constant"
+	  # value: 1
+	# }
+	# shift_filler {
+	  # type: "constant"
+	  # value: 0
+	# }
+ # }
+# }
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 50
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "gaussian"
+	  std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+    name: "relu2" 
+    type: "ReLU" 
+    bottom: "conv2" 
+    top: "conv2" 
+}
+# layer {
+  # name: "conv2_bn"
+  # type: "BN"
+  # bottom: "conv2"
+  # top: "conv2_bn"
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # bn_param {
+	# scale_filler {
+	  # type: "constant"
+	  # value: 1
+	# }
+	# shift_filler {
+	  # type: "constant"
+	  # value: 0
+	# }
+ # }
+# }
+# layer {
+  # name: "pool2"
+  # type: "Pooling"
+  # bottom: "conv2"
+  # top: "pool2"
+  # pooling_param {
+    # pool: MAX
+    # kernel_size: 2
+    # stride: 2
+  # }
+# }
+
+# layer {
+  # name: "conv3"
+  # type: "Convolution"
+  # bottom: "pool2"
+  # top: "conv3"
+  # param {
+    # lr_mult: 1
+  # }
+  # param {
+    # lr_mult: 2
+  # }
+  # convolution_param {
+    # num_output: 50
+    # kernel_size: 3
+    # stride: 1
+    # weight_filler {
+      # type: "gaussian"
+	  # std: 0.01
+    # }
+    # bias_filler {
+      # type: "constant"
+    # }
+  # }
+# }
+# layer {
+  # name: "conv3_bn"
+  # type: "BN"
+  # bottom: "conv3"
+  # top: "conv3_bn"
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # bn_param {
+	# scale_filler {
+	  # type: "constant"
+	  # value: 1
+	# }
+	# shift_filler {
+	  # type: "constant"
+	  # value: 0
+	# }
+ # }
+# }
+# layer {
+    # name: "relu3"
+    # type: "ReLU" 
+    # bottom: "conv3" 
+    # top: "conv3" 
+# }
+
+# layer {
+  # name: "pool3"
+  # type: "Pooling"
+  # bottom: "conv3"
+  # top: "pool3"
+  # pooling_param {
+    # pool: MAX
+    # kernel_size: 2
+    # stride: 2
+  # }
+# }
+
+# layer {
+  # name: "conv4"
+  # type: "Convolution"
+  # bottom: "pool3"
+  # top: "conv4"
+  # param {
+    # lr_mult: 1
+  # }
+  # param {
+    # lr_mult: 2
+  # }
+  # convolution_param {
+    # num_output: 50
+    # kernel_size: 2
+    # stride: 1
+    # weight_filler {
+      # type: "gaussian"
+	  # std: 0.01
+    # }
+    # bias_filler {
+      # type: "constant"
+    # }
+  # }
+# }
+# layer {
+    # name: "relu4"
+    # type: "ReLU" 
+    # bottom: "conv4" 
+    # top: "conv4" 
+# }
+# layer {
+  # name: "conv4_bn"
+  # type: "BN"
+  # bottom: "conv4"
+  # top: "conv4_bn"
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # param {
+    # lr_mult: 1
+    # decay_mult: 0
+  # }
+  # bn_param {
+	# scale_filler {
+	  # type: "constant"
+	  # value: 1
+	# }
+	# shift_filler {
+	  # type: "constant"
+	  # value: 0
+	# }
+ # }
+# }
+# layer {
+  # name: "pool4"
+  # type: "Pooling"
+  # bottom: "conv4"
+  # top: "pool4"
+  # pooling_param {
+    # pool: MAX
+    # kernel_size: 2
+    # stride: 2
+  # }
+# }
+layer {
+  name: "ip1"
+  type: "InnerProduct"
+  bottom: "conv2"
+  # bottom: "pool4"
+  top: "ip1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 160
+    weight_filler {
+      type: "gaussian"
+	  std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+# layer { 
+   # name: "drop1" 
+   # type: "Dropout" 
+   # bottom: "ip1" 
+   # top: "ip1" 
+   # dropout_param { 
+    # dropout_ratio: 0.5 
+   # } 
+# } 
+
+layer {
+   name: "norm1"
+   type: "Normalize"
+   bottom: "ip1"
+   top: "ip1_norm"
+}
+
+# layer {
+  # name: "relu1"
+  # type: "ReLU"
+  # bottom: "ip1_norm"
+  # top: "ip1_relu"
+# }
+# layer {
+  # name: "ip2"
+  # type: "InnerProduct"
+  # bottom: "ip1"
+  # top: "ip2"
+  # param {
+    # lr_mult: 1
+  # }
+  # param {
+    # lr_mult: 2
+  # }
+  # inner_product_param {
+    # num_output: 2000
+    # weight_filler {
+      # type: "gaussian"
+	  # std: 0.01
+    # }
+    # bias_filler {
+      # type: "constant"
+    # }
+  # }
+# }
+# layer {
+  # name: "accuracy"
+  # type: "Accuracy"
+  # bottom: "ip2"
+  # bottom: "label"
+  # top: "accuracy"
+  # include {
+    # phase: TEST
+  # }
+# }
+# layer {
+  # name: "loss"
+  # type: "SoftmaxWithLoss"
+  # bottom: "ip2"
+  # bottom: "label"
+  # top: "loss"
+  # loss_weight: 1
+# }
+
+layer {
+  name: "loss"
+  type: "GraphLinkageLoss"
+  bottom: "ip1_norm"
+  bottom: "label"
+  top:"loss"
+  loss_weight: 1
+  graphlinkage_loss_param {
+    sigma: 0.1
+  }
+}

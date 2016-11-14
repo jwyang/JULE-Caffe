@@ -1,0 +1,1 @@
+D:/caffe-windows-master/caffe-windows-master/bin/compute_image_mean.exe --backend leveldb mnist-train-mini-leveldb  mnist_mini_train_mean.binaryproto 
