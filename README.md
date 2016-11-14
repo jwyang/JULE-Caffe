@@ -1,5 +1,9 @@
 # JULE-Caffe
-Caffe code for our JULE paper "Joint unsupervised learning of deep representations and image clusters". The Torch version code can be found [here](https://github.com/jwyang/JULE-Torch).
+Caffe code for our JULE paper "Joint unsupervised learning of deep representations and image clusters". The Torch version code can be found [here](https://github.com/jwyang/JULE-Torch). 
+
+### NOTE
+
+**I have not yet finished cleaning up this code since i have to do it remotely. But it will be finished in several days. Once it is finished, this NOTE will be gone.
 
 ### Overview
 
