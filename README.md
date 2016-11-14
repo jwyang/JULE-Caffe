@@ -1,13 +1,13 @@
 # JULE-Caffe
-Caffe version of code for our paper "Joint unsupervised learning of deep representations and image clusters"
+Caffe code for our JULE paper "Joint unsupervised learning of deep representations and image clusters". The Torch version code can be found [here](https://github.com/jwyang/JULE-Torch).
 
 ### Overview
 
-This project is a Caffe implementation for our CVPR 2016 [paper](https://arxiv.org/abs/1604.03628), which performs jointly unsupervised learning of deep CNN and image clusters. The intuition behind this is that better image representation will facilitate clustering, while better clustering results will help representation learning. Given a unlabeled dataset, it will iteratively learn CNN parameters unsupervisedly and cluster images.
+This project is a Caffe implementation for our CVPR 2016 [paper](https://arxiv.org/abs/1604.03628), which performs jointly unsupervised learning of deep CNN and image clusters. The intuition behind this is that better image representation will facilitate clustering, while better clustering results will help representation learning. Given a unlabeled dataset, it will iteratively learn CNN parameters and cluster images in unsupervised manner.
 
-### Disclaimer
+### Acknowledgement
 
-This is the Caffe version implementation for our paper. The Torch version code can be found [here](https://github.com/jwyang/JULE-Torch).
+A great thanks to [happynear](https://github.com/happynear) for providing an awesome windows version Caffe. It is based on his code that we developed our JULE algorithm. 
 
 ### License
 
