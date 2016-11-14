@@ -7,7 +7,7 @@ This project is a Caffe implementation for our CVPR 2016 [paper](https://arxiv.o
 
 ### Acknowledgement
 
-A great thanks to [happynear](https://github.com/happynear) for providing an awesome windows version Caffe. It is based on his code that we developed our JULE algorithm. 
+A great thanks to [happynear](https://github.com/happynear) for providing an awesome windows version [Caffe](https://github.com/happynear/caffe-windows). It is based on his code that we developed our JULE algorithm.
 
 ### License
 
