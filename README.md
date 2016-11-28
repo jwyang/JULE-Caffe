@@ -11,7 +11,7 @@ This project is a Caffe implementation for our CVPR 2016 [paper](https://arxiv.o
 
 ### Acknowledgement
 
-A great thanks to [happynear](https://github.com/happynear) for providing an awesome windows version [Caffe](https://github.com/happynear/caffe-windows). It is based on his code that we developed our JULE algorithm.
+A great thanks to [happynear](https://github.com/happynear) for providing an awesome windows version [Caffe-Windows](https://github.com/happynear/caffe-windows). It is based on his code that we developed our JULE algorithm.
 
 ### License
 
@@ -29,15 +29,17 @@ If you find our code is useful in your researches, please cite:
 
 ### Dependencies
 
-1. [CUDA] (https://developer.nvidia.com/cuda-toolkit). Install CUDA on your PC. I used CUDA 7.5, but it should also work to use new versions.
+1. [CUDA](https://developer.nvidia.com/cuda-toolkit). Install CUDA on your PC. I used CUDA 7.5, but it should also work to use new versions.
 
-2. [Visual Studio] (https://www.visualstudio.com/downloads/). It is flexible to use various version of VS. I used VS2013 in my experiments.
+2. [Visual Studio](https://www.visualstudio.com/downloads/). It is flexible to use various version of VS. I used VS2013 in my experiments.
 
-3. Third Party. Caffe depends on several third-party libraries, including hdf5, boost, gflag, opencv, glog, to name a few. [happynear](https://github.com/happynear) has provided the compiled libraties at [Caffe] (https://github.com/happynear/caffe-windows). Download those libraries and place them in the root folder, then add the ./3rdparty/bin folder to your environment variable PATH.
+3. [Third Party](). Caffe depends on several third-party libraries, including hdf5, boost, gflag, opencv, glog, to name a few. [happynear](https://github.com/happynear) has provided the compiled libraties at [Caffe-Windows] (https://github.com/happynear/caffe-windows). Download those libraries and place them in the root folder, then add the ./3rdparty/bin folder to your environment variable PATH. Please ensure that these libraries has the same dependency on CUDA to your project.
 
-### Run the code
+### Steps to run the code
 
-1. 
+1. Open ./buildVS2013/MainBuilder.sln using Visual Studio. Ideally, you will see 11 projects in one solution. Among them, you will mainly use caffelib and caffe_unsupervised to reproduce the results in our paper. However, the projects might crash because of different version of CUDA you are using. In this case, change the CUDA version in vcxproj file of each project.
+
+2. 
 
 ### Datasets
 
