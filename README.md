@@ -1,5 +1,5 @@
 # JULE-Caffe
-Caffe code for our JULE paper "Joint unsupervised learning of deep representations and image clusters". The Torch version code can be found [here](https://github.com/jwyang/JULE-Torch). 
+Caffe code for our CVPR 2016 paper "Joint unsupervised learning of deep representations and image clusters". The Torch version code can be found [here](https://github.com/jwyang/JULE-Torch). 
 
 ### NOTE
 
@@ -18,7 +18,7 @@ A great thanks to [happynear](https://github.com/happynear) for providing an awe
 This code is released under the MIT License (refer to the LICENSE file for details).
 
 ### Citation
-If you find our code is useful in your researches, please consider citing:
+If you find our code is useful in your researches, please cite:
 
     @inproceedings{yangCVPR2016joint,
         Author = {Yang, Jianwei and Parikh, Devi and Batra, Dhruv},
@@ -28,6 +28,10 @@ If you find our code is useful in your researches, please consider citing:
     }
 
 ### Dependencies
+
+1. Third Party. As illustrated in happynear [Caffe] (https://github.com/happynear/caffe-windows), download third-party libraries to root/3rdparty/. Also, remember to add the ./3rdparty/bin folder to your environment variable PATH.
+
+2. [CUDA] (https://developer.nvidia.com/cuda-toolkit). Install CUDA on your PC. I used CUDA 7.5, but it should also work to use new versions.
 
 ### Train model
 
