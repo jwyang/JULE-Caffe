@@ -29,11 +29,15 @@ If you find our code is useful in your researches, please cite:
 
 ### Dependencies
 
-1. Third Party. As illustrated in happynear [Caffe] (https://github.com/happynear/caffe-windows), download third-party libraries to root/3rdparty/. Also, remember to add the ./3rdparty/bin folder to your environment variable PATH.
+1. [CUDA] (https://developer.nvidia.com/cuda-toolkit). Install CUDA on your PC. I used CUDA 7.5, but it should also work to use new versions.
 
-2. [CUDA] (https://developer.nvidia.com/cuda-toolkit). Install CUDA on your PC. I used CUDA 7.5, but it should also work to use new versions.
+2. [Visual Studio] (https://www.visualstudio.com/downloads/). It is flexible to use various version of VS. I used VS2013 in my experiments.
 
-### Train model
+3. Third Party. Caffe depends on several third-party libraries, including hdf5, boost, gflag, opencv, glog, to name a few. [happynear](https://github.com/happynear) has provided the compiled libraties at [Caffe] (https://github.com/happynear/caffe-windows). Download those libraries and place them in the root folder, then add the ./3rdparty/bin folder to your environment variable PATH.
+
+### Run the code
+
+1. 
 
 ### Datasets
 
